@@ -1,0 +1,59 @@
+1. Go to http://www.instructables.com/id/Introduction-38/
+2. Download Virtual box from https://www.virtualbox.org/wiki/Downloads and download ubuntu iso from http://www.ubuntu.com/download/desktop
+3. Run Virtualbox exe. New --> Name: <Any name> , Type:Linux, Version: Ubuntu 64bits
+	Memory size (RAM): 4096MB (we can change it later also)
+	Create a vitual Hard disk now --> VDI --> Dynamically allocated---> size: 50 GB (we can change it later also)
+	Settings -->Storage --> Empty --> Optional Drive --> CD icon --> select  the ubuntu iso which we have downloaded.
+	English --> Install Ubuntu --> Continue --> Erase disk and install ubuntu (it erases only in VM , not in Host machine) --> Install Now
+
+4.Download Anaconda 2.7 and install inside VM
+5. Launch Anaconda prompt from Anaconda navigator inside VM and run below commands
+6 To install kivy on Ubuntu. Go to https://kivy.org/docs/installation/installation-linux.html
+	1. conda create -n kivy_saurabh python anaconda  (to create an virtual environment for kivy)
+	2. source activate kivy_saurabh    (to activate the environment)
+	3. conda/sudo add-apt-repository ppa:kivy-team/kivy (stable build. Use conda in every command, if conda doesn't work then use sudo)
+	4. conda/sudo apt-get update
+	5. conda/sudo apt-get install python-kivy
+	6. # Install necessary system packages
+sudo apt-get install -y \
+    python-pip \
+    build-essential \
+    git \
+    python \
+    python-dev \
+    ffmpeg \
+    libsdl2-dev \
+    libsdl2-image-dev \
+    libsdl2-mixer-dev \
+    libsdl2-ttf-dev \
+    libportmidi-dev \
+    libswscale-dev \
+    libavformat-dev \
+    libavcodec-dev \
+    zlib1g-dev
+
+# Install gstreamer for audio, video (optional)
+sudo apt-get install -y \
+    libgstreamer1.0 \
+    gstreamer1.0-plugins-base \
+    gstreamer1.0-plugins-good
+
+	7. - sudo add-apt-repository ppa:mc3man/trusty-media
+	   - sudo apt-get update
+           - sudo apt-get install ffmpeg
+
+	8. conda install virtualenv setuptools
+	9. conda/pip install Cython==0.25.2   (0.27.3 doesn't work for ubuntu)
+	10. conda/pip install kivy
+
+7. Go to http://pytorch.org/  and select OS, Package manager, python, Coda (none) and run the command
+	conda install pytorch torchvision -c pytorch
+
+8. Always launch spyder after activating kivy_saurabh
+	Launch anaconda prompt
+	source activate kivy_saurabh
+	spyder
+
+
+
+	 
